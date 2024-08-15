@@ -29,9 +29,13 @@ func HandleGrpc(w io.Writer, args []string) (err error) {
 
 grpc: A gRPC client.
 
-grpc: <options> server`
+grpc: <options> server
+`
 		fmt.Fprintf(w, usageString)
 		fmt.Fprintln(w)
+		fmt.Fprintln(w)
+		fmt.Fprintln(w, "Options :")
+		fs.PrintDefaults()
 	}
 
 	err = fs.Parse(args)
