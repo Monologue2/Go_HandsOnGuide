@@ -30,6 +30,7 @@ Options :
     	Method to call
 `
 
+	// struct slice 이후 struct 선언 + 정의
 	testConfig := []struct {
 		args   []string
 		output string
@@ -57,6 +58,10 @@ Options :
 
 	byteBuf := new(bytes.Buffer)
 
+	// 각 testcase 실행
+	// 에러가 없는데 에러가 생긴 경우 : Expected nil error
+	// 에러가 있는데 예상과 다른 에러인 경우 : Expected error, got error
+	// 출력이 존재할 때 출력이 다른 경우 : Expected output to be..
 	for _, tc := range testConfig {
 		err := handleCommand(byteBuf, tc.args)
 
