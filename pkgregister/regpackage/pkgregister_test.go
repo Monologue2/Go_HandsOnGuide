@@ -11,6 +11,7 @@ import (
 
 func packageTestServerHandler(w http.ResponseWriter, r *http.Request) {
 	// Data 형식이 잘못 될 경우 Content-Type은 text/plain이 된다.
+	// comma를 주의하세요
 	data := `[
 		{"name":"package1", "version":"1.1"},
 		{"name":"package2", "version":"2.1"}
